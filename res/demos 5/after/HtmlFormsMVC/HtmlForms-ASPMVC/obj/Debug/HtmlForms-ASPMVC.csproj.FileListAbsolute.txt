@@ -1,0 +1,7 @@
+C:\Users\mmilner.M3TP\Desktop\HtmlFormsMVC\HtmlForms-ASPMVC\obj\Debug\HtmlForms-ASPMVC.csprojResolveAssemblyReference.cache
+C:\Users\mmilner.M3TP\Desktop\HtmlFormsMVC\HtmlForms-ASPMVC\bin\HtmlForms-ASPMVC.dll
+C:\Users\mmilner.M3TP\Desktop\HtmlFormsMVC\HtmlForms-ASPMVC\bin\HtmlForms-ASPMVC.pdb
+C:\Users\mmilner.M3TP\Desktop\HtmlFormsMVC\HtmlForms-ASPMVC\bin\EntityFramework.dll
+C:\Users\mmilner.M3TP\Desktop\HtmlFormsMVC\HtmlForms-ASPMVC\bin\EntityFramework.xml
+C:\Users\mmilner.M3TP\Desktop\HtmlFormsMVC\HtmlForms-ASPMVC\obj\Debug\HtmlForms-ASPMVC.dll
+C:\Users\mmilner.M3TP\Desktop\HtmlFormsMVC\HtmlForms-ASPMVC\obj\Debug\HtmlForms-ASPMVC.pdb

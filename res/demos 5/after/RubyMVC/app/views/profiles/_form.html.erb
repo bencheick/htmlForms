@@ -1,0 +1,55 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <fieldset>
+      <legend>Contact Information</legend>
+      <%= f.label :firstName, text="First name" %>:
+      <%= f.text_field :firstName %> <br />
+
+      <%= f.label :lastName, text="Last name" %>:
+      <%= f.text_field :lastName %> <br />
+
+      <%= f.label :email, text="Email" %>:
+      <%= f.email_field :email %> <br />
+
+
+    </fieldset>
+
+    <fieldset>
+
+      Bio:<br />
+      <%=  f.text_area :bio %>    <br />
+
+
+      <!-- Selections-->
+      Occupation:
+      <%= f.select :occupation, Profile::OCCUPATION_TYPES %>
+
+
+      <br />
+      Gender:
+      <label>   <%= f.radio_button :gender, "male" %>Male</label>
+      <label>   <%= f.radio_button :gender, "female" %>Female</label>
+      <br />
+      Preferences:<br />
+      <%= f.check_box :newsletter, :checked=> @profile.newsletter? %><%=  f.label :newsletter, text="Send me a newsletter" %> <br />
+      <%= f.check_box :partners,:checked=>@profile.partners? %>   <%=  f.label :partners, text="Send me partner offers" %>    <br/>
+      <%= f.check_box :marketing,:checked=>@profile.marketing? %>  <%=  f.label :marketing, text="Send me marketing materials" %>     <br/>
+
+
+    </fieldset>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,69 @@
+<!DOCTYPE html >
+<html>
+  <head>
+    <title>HTML for examples</title>
+    <meta name="keywords" content="HTML, forms, input, sample, Pluralsight">
+    <meta name="description" content="Sample page showing a form for providing profile information.">
+  </head>
+  
+  <body>
+  <h1>Profile information</h1>
+    <form method="post" action="profile.cshtml">
+        <!-- Text inputs -->
+
+        First name: <input type="text" size="10" maxlength="20"  id="firstName" name="firstName"></input><br />
+        Last name: <input type="text" size="10" maxlength="20"  id="lastName" name="lastName"></input><br />
+        EMail: <input type="email" id="emailAddress" name="emailAddress"></input><br />
+    
+        Username: <input type="text" id="userName" name="userName" readonly="true" 
+            value="matt.milner"></input><br />
+        Disabled text: <input type="text" id="nothing" name="nothing" disabled value="foo"></input><br />
+
+        Password: <input type="password" id="pwd" name="userPassword"></input><br />
+        <input type="hidden" value="hidden value" name="MyHiddenText"></input>
+        Bio:<br />
+        <textarea id="bio" name="bio" rows="5" cols="30"></textarea><br />
+
+        <!-- Selections-->
+        Occupation:
+        <select id="occupation" name="occupation" size="3" multiple>
+            <optgroup label="Technical">
+                <option label="Developer" value="dev" ></option>
+                <option label="Web Designer" value="design"></option>
+            </optgroup>
+            <optgroup label="Non-technical">
+            <option label="Consultant" value="consult" selected></option>
+            <option label="Manager" value="mgr"></option>
+                </optgroup>
+
+            <option label="Other" value="other"></option>
+        </select>
+       
+        <br />
+        Gender:
+        <input type="radio" id="male" name="gender" value="male">Male</input>
+        <input type="radio" id="female" name="gender" value="female" checked>Female</input>
+        <br />
+        Preferences:<br />
+        <input type="checkbox" id="pref1" name="prefs" value="newsletter">Send me a newsletter</input><br />
+        <input type="checkbox" id="pref2" name="prefs" value="partners">Send me partner offers</input><br />
+        <input type="checkbox" id="pref3" name="prefs" value="marketing">Send me marketing materials</input><br />
+
+        
+        <input type="submit" name="submit" value="Submit"></input>
+        <input type="reset"  value="Start over"></input>
+
+        <input type="image" src="./images/PScircle.png" alt="Pluralsight" name="imageSubmit" value="true"></input>
+
+        <input type="button" value="Push button" onclick="alert('hello')" ></input>
+
+        <button type="submit" value="true" name="buttonSubmit">
+            <span style="text-decoration: underline; color: green">Button with content</span>
+        </button>
+    </form>
+      <br />
+      <br />
+      <br />
+      <br /><br /><br /><br /><br />
+  </body>
+</html>

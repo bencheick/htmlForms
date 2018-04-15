@@ -1,0 +1,84 @@
+@model HtmlForms_ASPMVC.Models.ProfileModel
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.FirstName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FirstName)
+    @Html.ValidationMessageFor(model => model.FirstName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.LastName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.LastName)
+    @Html.ValidationMessageFor(model => model.LastName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Email)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Email)
+    @Html.ValidationMessageFor(model => model.Email)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Occupation)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.Occupation, 
+    new List<SelectListItem> {
+        new SelectListItem{Text = "Developer", Value="dev"},
+        new SelectListItem{Text= "Web Designer", Value="design"},
+        new SelectListItem{Text= "Consultant", Value="consult"},
+        new SelectListItem{Text= "Manager", Value="mgr"},
+        new SelectListItem{Text= "Other", Value="other"}
+    })
+    @Html.ValidationMessageFor(model => model.Occupation)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Gender)
+</div>
+<div class="editor-field">
+    <label>@Html.RadioButton("gender", "male", (Model !=null && !String.IsNullOrEmpty(Model.Gender)) ? Model.Gender == "male" : false)Male</label>
+    <label>@Html.RadioButton("gender", "female", (Model != null && !String.IsNullOrEmpty(Model.Gender)) ? Model.Gender=="female" : true)Female</label>
+    @Html.ValidationMessageFor(model => model.Gender)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Bio)
+</div>
+<div class="editor-field">
+    @Html.TextAreaFor(model => model.Bio)
+    @Html.ValidationMessageFor(model => model.Bio)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Newsletter)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Newsletter)
+    @Html.ValidationMessageFor(model => model.Newsletter)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Marketing)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Marketing)
+    @Html.ValidationMessageFor(model => model.Marketing)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PartnerOffers)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PartnerOffers)
+    @Html.ValidationMessageFor(model => model.PartnerOffers)
+</div>
+

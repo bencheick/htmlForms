@@ -1,0 +1,67 @@
+﻿@{
+    var model = new ProfileModel();
+    if(Request.HttpMethod.ToUpper() == "POST") {
+        
+
+        model.FirstName = Request.Params["firstName"];
+        model.LastName = Request.Params["lastName"];
+        model.Email = Request.Params["emailAddress"];
+
+        model.Bio = Request.Params["bio"];
+        model.Occupation = Request.Params["occupation"];
+        model.Gender = Request.Params["gender"];
+
+        //TODO: process file upload
+        if(Request.Files["profileImage"] != null) {
+            var fileExtension = System.IO.Path.GetExtension(Request.Files["profileImage"].FileName);
+            var fileName = Guid.NewGuid();
+            var relativePath = String.Format("images/{0}{1}", fileName, fileExtension);
+            var serverFilePath = Server.MapPath(relativePath);
+            using(var fileStream = File.OpenWrite(serverFilePath))
+            {
+                Request.Files["ProfileImage"].InputStream.CopyTo(fileStream);
+            }
+
+            model.ImagePath = relativePath;
+        }
+        
+        var preferences = Request.Params["prefs"].Split(',');
+
+        model.Newsletter = preferences.Contains("newsletter");
+        model.Marketing = preferences.Contains("marketing");
+        model.PartnerOffers = preferences.Contains("partners");
+
+        //TODO: save / process your model
+        
+    }
+}
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Profile processed - ASP.NET</title>
+    </head>
+    <body>
+        <h1>Profile information - ASP.NET</h1>
+        
+        <span>First Name:</span> <span>@model.FirstName</span> <br />
+        <span>Last Name:</span> <span>@model.LastName</span> <br />
+        <span>Email:</span><span> @model.Email</span> <br />
+        
+        <span>Bio:</span><span> @model.Bio</span> <br />
+        <span>Occupation:</span><span> @model.Occupation</span> <br />
+        <span>Gender:</span> <span>@model.Gender</span> <br />
+        <span>Image name:</span><span> @model.ImagePath</span> <br />
+        <img src="@model.ImagePath" alt="@model.FirstName" title="@model.LastName" /><br />
+        <span>Preferences:</span> <br />
+            Marketing: @model.Marketing<br />
+            Partner offers: @model.PartnerOffers<br />
+            Newsletter: @model.Newsletter<br />
+                                         
+
+      
+    </body>
+</html>

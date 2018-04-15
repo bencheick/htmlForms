@@ -1,0 +1,46 @@
+@model HtmlForms_ASPMVC.Models.ProfileModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ProfileModel</legend>
+
+    <div class="display-label">FirstName</div>
+    <div class="display-field">@Model.FirstName</div>
+
+    <div class="display-label">LastName</div>
+    <div class="display-field">@Model.LastName</div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">ImagePath</div>
+    <div class="display-field">@Model.ImagePath</div>
+
+    <div class="display-label">Occupation</div>
+    <div class="display-field">@Model.Occupation</div>
+
+    <div class="display-label">Gender</div>
+    <div class="display-field">@Model.Gender</div>
+
+    <div class="display-label">Bio</div>
+    <div class="display-field">@Model.Bio</div>
+
+    <div class="display-label">Newsletter</div>
+    <div class="display-field">@Model.Newsletter</div>
+
+    <div class="display-label">Marketing</div>
+    <div class="display-field">@Model.Marketing</div>
+
+    <div class="display-label">PartnerOffers</div>
+    <div class="display-field">@Model.PartnerOffers</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Create new", "Index")
+</p>
+
+

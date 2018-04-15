@@ -1,0 +1,19 @@
+<h1>Profile information - Ruby</h1>
+
+<span>First Name:</span> <span><%= @profileMod.firstName %></span> <br />
+<span>Last Name:</span> <span><%= @profileMod.lastName %></span> <br />
+<span>Email:</span><span><%=  @profileMod.email %></span> <br />
+
+<span>Bio:</span><span><%= @profileMod.bio %></span> <br />
+<span>Occupation:</span><span><%= @profileMod.occupation %></span> <br />
+<span>Gender:</span> <span><%=@profileMod.gender %></span> <br />
+
+<span>Image name:</span><span><%= @profileMod.imagePath %></span> <br />
+<img src="<%=@profileMod.imagePath %>" alt="<%=@profileMod.firstName %>" title="<%=@profileMod.lastName%>" /><br />
+
+<span>Preferences:</span> <br />
+Marketing: <%=@profileMod.marketing %><br />
+Partner offers: <%= @profileMod.partners %><br />
+Newsletter: <%=@profileMod.newsletter %><br />
+
+
